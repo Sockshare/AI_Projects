@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-T">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flask Calculator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="calculator">
+        <div class="display-container">
+            <input type="text" id="display" disabled>
+        </div>
+        <div class="buttons">
+            <!-- Number Buttons -->
+            <button onclick="appendToDisplay('7')">7</button>
+            <button onclick="appendToDisplay('8')">8</button>
+            <button onclick="appendToDisplay('9')">9</button>
+            <button class="operator" onclick="setOperator('/')">/</button>
+
+            <button onclick="appendToDisplay('4')">4</button>
+            <button onclick="appendToDisplay('5')">5</button>
+            <button onclick="appendToDisplay('6')">6</button>
+            <button class="operator" onclick="setOperator('*')">*</button>
+
+            <button onclick="appendToDisplay('1')">1</button>
+            <button onclick="appendToDisplay('2')">2</button>
+            <button onclick="appendToDisplay('3')">3</button>
+            <button class="operator" onclick="setOperator('-')">-</button>
+
+            <button onclick="appendToDisplay('0')">0</button>
+            <button onclick="appendToDisplay('.')">.</button>
+            <button id="clear" onclick="clearDisplay()">C</button>
+            <button class="operator" onclick="setOperator('+')">+</button>
+
+            <button id="equals" onclick="calculateResult()">=</button>
+        </div>
+
+        <div class="advanced-functions">
+            <div class="category">
+                <h3>Algebra</h3>
+                <h4>Solve Linear Equation (ax + b = c)</h4>
+                <div>
+                    <label for="algebra-a">a:</label>
+                    <input type="number" id="algebra-a" placeholder="Enter a">
+                    <label for="algebra-b">b:</label>
+                    <input type="number" id="algebra-b" placeholder="Enter b">
+                    <label for="algebra-c">c:</label>
+                    <input type="number" id="algebra-c" placeholder="Enter c">
+                </div>
+                <button onclick="solveLinearEquation()">Solve for x</button>
+                <p>Result: <span id="linear-equation-result"></span></p>
+
+                <hr style="margin: 15px 0;">
+                <h4>Solve Quadratic Equation (ax² + bx + c = 0)</h4>
+                <div>
+                    <label for="quad-a">a:</label>
+                    <input type="number" id="quad-a" placeholder="Enter a">
+                    <label for="quad-b">b:</label>
+                    <input type="number" id="quad-b" placeholder="Enter b">
+                    <label for="quad-c">c:</label>
+                    <input type="number" id="quad-c" placeholder="Enter c">
+                </div>
+                <button onclick="solveQuadraticEquation()">Solve for x</button>
+                <p>Result: <span id="quadratic-equation-result"></span></p>
+            </div>
+            <div class="category">
+                <h3>Geometry</h3>
+                <h4>Area of a Rectangle</h4>
+                <div>
+                    <label for="rect-length">Length:</label>
+                    <input type="number" id="rect-length" placeholder="Enter length">
+                    <label for="rect-width">Width:</label>
+                    <input type="number" id="rect-width" placeholder="Enter width">
+                </div>
+                <button onclick="calculateRectangleArea()">Calculate Area</button>
+                <p>Result: <span id="rectangle-area-result"></span></p>
+                <button onclick="calculateRectanglePerimeter()">Calculate Perimeter</button>
+                <p>Result: <span id="rectangle-perimeter-result"></span></p>
+
+                <hr style="margin: 15px 0;">
+                <h4>Area of a Circle</h4>
+                <div>
+                    <label for="circle-radius">Radius:</label>
+                    <input type="number" id="circle-radius" placeholder="Enter radius">
+                </div>
+                <button onclick="calculateCircleArea()">Calculate Area</button>
+                <p>Result: <span id="circle-area-result"></span></p>
+                <button onclick="calculateCircleCircumference()">Calculate Circumference</button>
+                <p>Result: <span id="circle-circumference-result"></span></p>
+            </div>
+            <div class="category">
+                <h3>Linear Algebra</h3>
+                <!-- Linear Algebra function buttons will go here -->
+            </div>
+            <div class="category">
+                <h3>Calculus</h3>
+                <!-- Calculus function buttons will go here -->
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

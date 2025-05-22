@@ -1,0 +1,104 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f0f0f0;
+    font-family: Arial, sans-serif;
+}
+
+.calculator {
+    background-color: #3a3a3a;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+}
+
+.display-container {
+    margin-bottom: 15px;
+}
+
+#display {
+    width: calc(100% - 20px); /* Account for padding */
+    padding: 10px;
+    font-size: 2em;
+    text-align: right;
+    border: none;
+    border-radius: 5px;
+    background-color: #c0c0c0;
+    color: #333;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+button {
+    padding: 20px;
+    font-size: 1.5em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #666;
+    color: white;
+    transition: background-color 0.2s ease-in-out;
+}
+
+button:hover {
+    background-color: #777;
+}
+
+button:active {
+    background-color: #888;
+}
+
+.operator {
+    background-color: #ff9500; /* Orange for operators */
+}
+
+.operator:hover {
+    background-color: #ffad33;
+}
+
+#clear {
+    background-color: #ff3b30; /* Red for clear */
+}
+
+#clear:hover {
+    background-color: #ff6347;
+}
+
+#equals {
+    grid-column: span 4; /* Make equals button span full width */
+    background-color: #4cd964; /* Green for equals */
+}
+
+#equals:hover {
+    background-color: #5edc72;
+}
+
+.advanced-functions {
+    margin-top: 20px;
+    padding-top: 10px;
+    border-top: 1px solid #555;
+}
+
+.advanced-functions h3 {
+    color: #f0f0f0;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.category {
+    margin-bottom: 15px;
+    padding: 10px;
+    background-color: #4a4a4a;
+    border-radius: 5px;
+}
+
+/* Basic animation for button press - can be expanded later */
+button:active {
+    transform: scale(0.95);
+}
